@@ -30,6 +30,7 @@ build() {
 		--prefix='/usr' \
 		--disable-static \
 		--enable-pkgconfig \
+		--enable-soap \
 		--with-openssl=/usr \
 		--without-gnutls \
 		--without-gcrypt \
