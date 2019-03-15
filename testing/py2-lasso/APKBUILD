@@ -1,0 +1,40 @@
+# Contributor: Steeve Chailloux <steeve.chailloux@orus.io>
+# Maintainer: Steeve Chailloux <steeve.chailloux@orus.io>
+pkgname=py2-lasso
+_pkgname=lasso
+pkgver=2.5.1
+pkgrel=0
+pkgdesc="Lasso is a free-software library implementing the SAML 2.0 and ID-FF 1.2 protocols."
+url="https://dev.entrouvert.org/projects/lasso"
+arch="all"
+license="GPL-3.0-only"
+depends=""
+makedepends="libxml2-dev libxslt-dev xmlsec-dev glib-dev python2-dev py-lxml openssl-dev glib-dev libtool gtk-doc chrpath py-six"
+install=""
+subpackages="$pkgname-doc"
+source="https://dev.entrouvert.org/${_pkgname}/${_pkgname}-${pkgver}.tar.gz"
+builddir="$srcdir/$_pkgname-$pkgver"
+
+build() {
+	cd "$builddir"
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man \
+		--disable-perl \
+		--disable-php5 \
+		--disable-java \
+		--with-python=/usr/bin/python2
+	make
+}
+
+check() {
+	cd "$builddir"
+	make check
+}
+
+package() {
+	cd "$builddir"
+	make DESTDIR="$pkgdir" install
+}
+
+sha512sums="f20bea62c04f3082d5c423f658bafe1bdde0012321c43092ed5d5a2c3ec7b21ec27d88d9fc630743fd7c99e767d9fd92b98de5d4f7d98c3a9e680717483daae1  lasso-2.5.1.tar.gz"
