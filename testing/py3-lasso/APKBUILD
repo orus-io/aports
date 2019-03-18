@@ -2,7 +2,7 @@
 # Maintainer: Steeve Chailloux <steeve.chailloux@orus.io>
 pkgname=py3-lasso
 _pkgname=lasso
-pkgver=2.5.1
+pkgver=2.6.0
 pkgrel=0
 pkgdesc="Lasso is a free-software library implementing the SAML 2.0 and ID-FF 1.2 protocols."
 url="https://dev.entrouvert.org/projects/lasso"
@@ -36,5 +36,4 @@ package() {
 	cd "$builddir"
 	make DESTDIR="$pkgdir" install
 }
-
-sha512sums="f20bea62c04f3082d5c423f658bafe1bdde0012321c43092ed5d5a2c3ec7b21ec27d88d9fc630743fd7c99e767d9fd92b98de5d4f7d98c3a9e680717483daae1  lasso-2.5.1.tar.gz"
+sha512sums="bec7ab09f73db01b0a88cd1a7c9e9c8bb6af2e0aeb5e9ece2aa0f2f46e22b6a412990c29971a765a830f0bedf174b7c9d866cae599b81d047d381cf59d844506  lasso-2.6.0.tar.gz"
